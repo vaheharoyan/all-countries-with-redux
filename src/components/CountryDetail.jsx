@@ -7,8 +7,10 @@ const CountryDetail = () => {
   const navigate = useNavigate();
 
   const country = useSelector((state) =>
-    state.countries.list.find((c) => c.cca3 === code)
+    state.countries?.list?.find((c) => c.cca3 === code)
   );
+  
+  
 
   if (!country) return <p>Country not found</p>;
 
@@ -40,7 +42,7 @@ const CountryDetail = () => {
 };
 
 
-{country.coatOfArms?.png && (
+{ (
   <div className="coat-of-arms">
     <h4>Coat of Arms:</h4>
     <img
